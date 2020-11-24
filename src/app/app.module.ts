@@ -5,21 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
-
+import { FormSearchComponent } from './shared/components/form-search/form-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material-module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    FormSearchComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // FontAwesomeModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  exports: [],
+  exports: [BrowserModule],
 
   providers: [],
   bootstrap: [AppComponent]

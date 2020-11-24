@@ -1,0 +1,33 @@
+<div class="container">
+    <img src="/assets/img/dcrd_memories_logo_blue.svg" alt="">
+</div>
+
+<div class="container search-input">
+    <input class="input-search" type="text" placeholder="Realiza una busqueda aquí">
+</div>
+
+<div class="container date">
+    <div class="item-date">
+        <label>Desde: &nbsp;&nbsp;</label>
+        <mat-form-field appearance="fill">
+            <mat-label>Seleccione una fecha</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="item-date">
+        <label>Hasta: &nbsp;&nbsp;</label>
+        <mat-form-field appearance="fill">
+            <mat-label>Seleccione una fecha</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="btn-search">
+        <button type="button" class="btn btn-primary" [routerLink]="['/resultsSearchList']" routerLinkActive="router-link-active" >Search</button>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+Para generar un modulo con componente y ruta se usa el comando :
+
+ng g m components/pages/nombredelcomponente/nombre-del-componente -m=app --route nombre-de-la-ruta
