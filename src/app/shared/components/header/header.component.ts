@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, HostBinding} from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -6,6 +7,17 @@ import { Component} from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor() { }
+  private isDark = true;
+
+  constructor(private router : Router) { }
+
+  redirectHome(){
+    this.router.navigate(['/home']);
+  }
+
+  @HostBinding('class')
+  get themeMode(){
+    return this.isDark ? 'theme-dark' : 'theme-light';
+  }
 
 }

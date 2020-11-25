@@ -2,22 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormSearchComponent } from './form-search/form-search.component';
 import { HeaderComponent } from './header/header.component';
+import { MaterialModule } from 'src/app/material/material-module';
 
 @NgModule({
     declarations: [
         HeaderComponent,
-        FormSearchComponent
+        FormSearchComponent,
     ],
     exports: [
         HeaderComponent,
-        FormSearchComponent
+        FormSearchComponent,
     ],
     imports: [
-        
+        MaterialModule
     ],
     providers: [
         HeaderComponent,
-        FormSearchComponent
+        FormSearchComponent,
     ]
   })
   export class ComponentsModule { }

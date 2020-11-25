@@ -1,7 +1,28 @@
 <nav class="navbar navbar-dark sticky-top nav-bg flex-md-nowrap p-0 shadow">
-  <!-- <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3"><img  src="/assets/img/dcrd_memories_logo.svg"></div> -->
+  <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" (click)="redirectHome()" routerLinkActive="router-link-active" ><img  src="/assets/img/dcrd_memories_logo.svg"></div>
   <div class="search-container"> 
     <app-form-search></app-form-search>
+  </div>
+  <div class="date">
+      <div class="item-date">
+        <label>Desde: &nbsp;&nbsp;</label>
+        <mat-form-field appearance="fill">
+            <mat-label>Seleccione una fecha</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+    
+      <div class="item-date">
+          <label>Hasta: &nbsp;&nbsp;</label>
+          <mat-form-field appearance="fill">
+              <mat-label>Seleccione una fecha</mat-label>
+              <input matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+      </div>
   </div>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">

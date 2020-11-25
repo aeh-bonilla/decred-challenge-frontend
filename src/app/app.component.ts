@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { JsonService } from './services/json.service';
 
 
@@ -9,12 +9,19 @@ import { JsonService } from './services/json.service';
 })
 
 export class AppComponent {
-  title = 'decredUIApp';
+  title = 'DCR MEMORIES';
+  
+  private isDark = false;
 
-  constructor(public json: JsonService){
-
-    this.json.getJson('https://api.github.com/users/ibuioli').subscribe( (res: any) =>{
-      console.log(res);
-    }); 
+  @HostBinding('class')
+  get themeMode(){
+    return this.isDark ? 'theme-dark' : 'theme-light';
   }
+
+  // constructor(public json: JsonService){
+
+  //   this.json.getJson('https://api.github.com/users/ibuioli').subscribe( (res: any) =>{
+  //     console.log(res);
+  //   }); 
+  // }
 }
