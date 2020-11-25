@@ -2,6 +2,8 @@ body {
     font-size: .875rem;
   }
   
+  $font-color: #fff;
+  
   .feather {
     width: 16px;
     height: 16px;
@@ -49,6 +51,19 @@ body {
     &:active{
         background-color:#2970FF;
     }
+  }
+  app-form-search{
+    .input-search{
+      color: #fff !important;
+    }
+  }
+  .search-container{
+    
+    width: 50%;
+    background: rgba(255, 255, 255, 0.048);
+  }
+  .input-search{
+    color: #fff !important;
   }
 
   

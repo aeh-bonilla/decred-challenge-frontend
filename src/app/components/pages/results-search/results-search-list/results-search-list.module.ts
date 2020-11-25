@@ -3,18 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ResultsSearchListRoutingModule } from './results-search-list-routing.module';
 import { ResultsSearchListComponent } from './results-search-list.component';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 
 @NgModule({
-  declarations: [ResultsSearchListComponent, HeaderComponent],
+  declarations: [ResultsSearchListComponent],
   imports: [
     CommonModule,
     ResultsSearchListRoutingModule,
-    
-  ],
-  exports:[
-    HeaderComponent
+    ComponentsModule
   ]
 })
 export class ResultsSearchListModule { }

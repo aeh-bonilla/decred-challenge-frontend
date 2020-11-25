@@ -1,9 +1,9 @@
 <div class="container">
-    <img src="/assets/img/dcrd_memories_logo_blue.svg" alt="">
+    <!-- <img src="/assets/img/dcrd_memories_logo_blue.svg" alt=""> -->
 </div>
 
 <div class="container search-input">
-    <input class="input-search" type="text" placeholder="Realiza una busqueda aquí">
+    <app-form-search></app-form-search>
 </div>
 
 <div class="container date">
@@ -22,12 +22,12 @@
         <mat-form-field appearance="fill">
             <mat-label>Seleccione una fecha</mat-label>
             <input matInput [matDatepicker]="picker2">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
     </div>
 
     <div class="btn-search">
-        <button type="button" class="btn btn-primary" [routerLink]="['/resultsSearchList']" routerLinkActive="router-link-active" >Search</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/search']" routerLinkActive="router-link-active" >Search</button>
     </div>
 </div>
