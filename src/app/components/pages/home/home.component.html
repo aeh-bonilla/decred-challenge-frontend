@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-logo">
     <img class="img-logo" src="/assets/img/dcrd_memories_logo_blue.svg" alt="">
 </div>
 
@@ -7,12 +7,11 @@
 </div>
 
 <div class="container date">
-    <div class="date">
         <div class="item-date">
           <label>Desde: &nbsp;&nbsp;</label>
           <mat-form-field appearance="fill">
               <mat-label>Seleccione una fecha</mat-label>
-              <input matInput [matDatepicker]="picker">
+              <input matInput [matDatepicker]="picker" >
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -27,20 +26,32 @@
                 <mat-datepicker #picker2></mat-datepicker>
               </mat-form-field>
         </div>
-      </div>
     <div class="btn-search">
-        <button type="button" class="btn btn-primary" [routerLink]="['/search']" routerLinkActive="router-link-active" >Search</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/search']" routerLinkActive="router-link-active" >Buscar</button>
     </div>
 </div>
 
 <div class="container">
     <div style="text-align:center">
         <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide><img class="cards" src="/assets/img/img-event-newyear.svg"></ng-template>  
-          <ng-template carouselSlide><img class="cards" src="/assets/img/img-event-newyear.svg"></ng-template>  
-          <ng-template carouselSlide><img class="cards" src="/assets/img/img-event-newyear.svg"></ng-template> 
-          <ng-template carouselSlide><img class="cards" src="/assets/img/img-event-newyear.svg"></ng-template> 
-          <ng-template carouselSlide><img class="cards" src="/assets/img/img-event-newyear.svg"></ng-template>  
+            <ng-template carouselSlide>
+                <mat-card class="cards"></mat-card>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <mat-card class="cards"></mat-card>
+            </ng-template>
+            <ng-template carouselSlide>
+                <mat-card class="cards"></mat-card>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <mat-card class="cards"></mat-card>
+            </ng-template>
+            <ng-template carouselSlide>
+                <mat-card class="cards"></mat-card>
+            </ng-template>
+            <ng-template carouselSlide>
+                <mat-card class="cards"></mat-card>
+            </ng-template>  
         </owl-carousel-o>
     </div>
 </div>

@@ -1,4 +1,16 @@
-h1{
-    margin-top: 20px;
-    font-size: 50px;
+.content{
+    margin-left: 20px;
+    overflow-x: hidden !important;
+    h2{
+        font-weight: bold;
+    }
+}
+
+.col{
+    background: lightblue;
+}
+
+.mat-paginator {
+    display: flex;
+    place-content: center;
 }

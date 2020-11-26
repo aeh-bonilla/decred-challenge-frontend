@@ -1,11 +1,12 @@
-<nav class="navbar navbar-dark sticky-top nav-bg flex-md-nowrap p-0 shadow">
-  <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" (click)="redirectHome()" routerLinkActive="router-link-active" ><img  src="/assets/img/dcrd_memories_logo.svg"></div>
-  <div class="search-container"> 
-    <app-form-search></app-form-search>
-  </div>
-  <div class="date">
+<mat-toolbar class="navbar" color="primary">
+  <mat-toolbar-row>
+    <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" (click)="redirectHome()" routerLinkActive="router-link-active" ><img  src="/assets/img/dcrd_memories_logo.svg"></div>
+    <div class="search-container"> 
+      <app-form-search style="color: #ffff !important;"></app-form-search>
+    </div>
+
+    <div class="nav-item date">
       <div class="item-date">
-        <label>Desde: &nbsp;&nbsp;</label>
         <mat-form-field appearance="fill">
             <mat-label>Seleccione una fecha</mat-label>
             <input matInput [matDatepicker]="picker">
@@ -15,7 +16,7 @@
       </div>
     
       <div class="item-date">
-          <label>Hasta: &nbsp;&nbsp;</label>
+          <label>&nbsp;&nbsp;─&nbsp;&nbsp;</label>
           <mat-form-field appearance="fill">
               <mat-label>Seleccione una fecha</mat-label>
               <input matInput [matDatepicker]="picker2">
@@ -24,9 +25,16 @@
             </mat-form-field>
       </div>
   </div>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <button type="button" class="btn btn-primary">Search</button>
-    </li>
-  </ul>
-</nav>
+
+  <div class="nav-item">
+    <button type="button" class="btn btn-primary">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar-row class="red-status-bg" >
+  <div class="content-data">
+    <h1>Hello DCRDATA</h1>
+  </div>
+</mat-toolbar-row>

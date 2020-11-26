@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 import { JsonService } from './services/json.service';
 
 
@@ -10,18 +10,11 @@ import { JsonService } from './services/json.service';
 
 export class AppComponent {
   title = 'DCR MEMORIES';
+
+  constructor(private json : JsonService){}
   
-  private isDark = false;
-
-  @HostBinding('class')
-  get themeMode(){
-    return this.isDark ? 'theme-dark' : 'theme-light';
+  getJson(){
+    this.json.getJson();
+    console.log(this.json);
   }
-
-  // constructor(public json: JsonService){
-
-  //   this.json.getJson('https://api.github.com/users/ibuioli').subscribe( (res: any) =>{
-  //     console.log(res);
-  //   }); 
-  // }
 }

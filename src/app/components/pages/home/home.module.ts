@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { MaterialModule } from 'src/app/material/material-module';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -13,7 +14,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HomeRoutingModule,
     MaterialModule,
     ComponentsModule,
-    CarouselModule
+    CarouselModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

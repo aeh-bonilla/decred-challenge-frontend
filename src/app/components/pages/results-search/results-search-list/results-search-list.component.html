@@ -1,2 +1,28 @@
 <app-header></app-header>
-<h1>CONTENT SEARCH</h1>
+
+<div class="content">
+    <h2>Resultados de busqueda</h2>
+    <div class="row">
+        <div class="col">
+            <div>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Bloque #{{ height }}</h5>
+                    <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1">{{hash}}</p>
+                    <small>Donec id elit non mi porta.</small>
+                </a>
+            </div>
+            <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 50, 100]">
+            </mat-paginator>
+        </div>
+        <div class="col">
+            GRAPHIGS
+        </div>
+    </div>
+</div>
+
+    

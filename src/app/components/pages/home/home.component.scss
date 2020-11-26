@@ -1,10 +1,16 @@
-.container{
+$font-color: rgb(0, 0, 0);
+
+.container-logo{
     text-align: center;
     
     .img-logo{
-        padding-top:100px;
-        width: 42%;
+        padding-top:150px;
+        width: 25%;
     }
+}
+
+.container{
+    text-align: center;
 }
 
 .search-input{
@@ -12,15 +18,18 @@
 }
 
 .date{
-    align-items: center;
     text-align: center;
     padding: 0 10% 0 10%;
     display: flex;
 }
 
+.item-date{
+    padding-left: 15px;
+}
+
 
 .btn-search{
-    padding-top: 6px;
+    padding-left: 15px;
 }
 
 .btn-primary{
@@ -35,8 +44,15 @@
 //carousel
 
 .cards{
-    padding: 8px;
+    margin: 10px 10px 20px 10px;
+    width: 240px;
+    height: 149px;
+    background-image: url('/assets/img/img-event-newyear.svg');
+    // background: no-repeat;
+    background-size: 100%;
+
     &:hover{
+        opacity: .93;
         transform: translateY(-3px);
         box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);     
         cursor: pointer;

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormSearchComponent } from './form-search/form-search.component';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from 'src/app/material/material-module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { MaterialModule } from 'src/app/material/material-module';
         FormSearchComponent,
     ],
     imports: [
-        MaterialModule
+        MaterialModule,
+        ReactiveFormsModule
     ],
     providers: [
         HeaderComponent,

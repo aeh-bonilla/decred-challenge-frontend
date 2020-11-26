@@ -1,4 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,6 @@ export class HomeComponent implements OnInit {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    animateIn:true,
-    animateOut: true,
     navText: ['<', '>'],
     responsive: {
       0: {
@@ -36,8 +35,9 @@ export class HomeComponent implements OnInit {
     },
     nav: true
   }
-  
-  constructor() { }
+
+  constructor() {}
+
 
   ngOnInit(): void {}
 
