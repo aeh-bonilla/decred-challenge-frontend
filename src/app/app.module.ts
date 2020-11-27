@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material-module';
 import { ComponentsModule } from './shared/components/components.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +17,12 @@ import { ComponentsModule } from './shared/components/components.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ComponentsModule
+    ComponentsModule,
+    CommonModule,
+    BrowserModule
   ],
   exports: [
-    BrowserModule,
+    // BrowserModule,
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

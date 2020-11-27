@@ -23,7 +23,7 @@ export class ResultsSearchListComponent implements OnInit {
 
   getBestBlock(){
     this.objBlock.getBestBlock().subscribe( (objResponse : any) =>{
-      console.log(objResponse);
+      // console.log(objResponse);
       this.hash = objResponse.hash;
       this.height = objResponse.height;
     })

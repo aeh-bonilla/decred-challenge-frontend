@@ -1,6 +1,6 @@
 <mat-toolbar class="navbar" color="primary">
   <mat-toolbar-row>
-    <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" (click)="redirectHome()" routerLinkActive="router-link-active" ><img  src="/assets/img/dcrd_memories_logo.svg"></div>
+    <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" (click)="btnRedirectHome()" routerLinkActive="router-link-active" ><img  src="/assets/img/dcrd_memories_logo.svg"></div>
     <div class="search-container"> 
       <app-form-search style="color: #ffff !important;"></app-form-search>
     </div>
@@ -34,7 +34,10 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-toolbar-row class="red-status-bg" >
-  <div class="content-data">
-    <h1>Hello DCRDATA</h1>
+  <div class="content-data" *ngFor = "let item of objCrypto">
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp; #{{ item.cmc_rank }}</h4>
+    <h4>&nbsp;&nbsp;&nbsp; Moneda: {{ item.name }}</h4>
+    <h4>&nbsp;&nbsp;&nbsp; Simbolo: {{ item.symbol }}</h4>
+    <h4>&nbsp;&nbsp;&nbsp; Precio USD: {{ item.price }}</h4>
   </div>
 </mat-toolbar-row>
