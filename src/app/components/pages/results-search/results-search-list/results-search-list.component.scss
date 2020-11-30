@@ -6,11 +6,19 @@
     }
 }
 
-.col{
-    background: lightblue;
-}
+// .col{
+//     background: lightblue;
+// }
 
 .mat-paginator {
     display: flex;
     place-content: center;
+}
+
+h5{
+    color:  #007bff;
+}
+
+a:active{
+    background: #d4d4d4;
 }

@@ -1,74 +1,27 @@
 <app-header></app-header>
 
 <div class="content">
-    <h2>Resultados de busqueda</h2>
+    <h2>Resultados de busqueda: {{ objNotice.length }}</h2>
     <div class="row">
         <div class="col">
-            <div>
-                <a href="#" class="list-group-item list-group-item-action">
+            <div *ngFor="let article of objNotice | paginate:page_size:page_number">
+                <a href="{{ article.url }}" class="list-group-item list-group-item-action" >
                     <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
+                    <h5 class="mb-1"><i style="font-size: 14px; color: rgb(10, 175, 153);" class="fa fa-chevron-circle-right"></i> {{ article.title }}</h5>
+                    <small>{{ article.publishedAt }}</small>
                     </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bloque #{{ height }}</h5>
-                    <small>3 days ago</small>
-                    </div>
-                    <p class="mb-1">{{hash}}</p>
-                    <small>Donec id elit non mi porta.</small>
+                    <p class="mb-1">{{ article.description }}</p>
+                    <small>{{ article.url }}</small>
                 </a>
             </div>
-            <mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 50, 100]">
+            <mat-paginator [length]="objNotice.length"
+              [pageSize]="page_size"
+              [pageSizeOptions]="page_size_options"
+              (page)="handlePage($event)">
             </mat-paginator>
         </div>
         <div class="col">
-            GRAPHIGS
+           <app-line-chart></app-line-chart>
         </div>
     </div>
 </div>

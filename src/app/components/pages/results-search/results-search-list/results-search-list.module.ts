@@ -5,6 +5,7 @@ import { ResultsSearchListRoutingModule } from './results-search-list-routing.mo
 import { ResultsSearchListComponent } from './results-search-list.component';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { MaterialModule } from 'src/app/material/material-module';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MaterialModule } from 'src/app/material/material-module';
     CommonModule,
     ResultsSearchListRoutingModule,
     MaterialModule,
-    ComponentsModule
+    ComponentsModule,
+    ChartsModule
   ]
 })
 

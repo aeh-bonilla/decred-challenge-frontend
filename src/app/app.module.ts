@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material-module';
 import { ComponentsModule } from './shared/components/components.module';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,13 +19,14 @@ import { CommonModule } from '@angular/common';
     MaterialModule,
     ComponentsModule,
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    
   ],
   exports: [
     // BrowserModule,
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
