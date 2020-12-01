@@ -44,7 +44,8 @@ $custom-typography: mat-typography-config(
   $font-family: 'Source Sans Pro'  
 );
 
-@include mat-core($custom-typography);
+// @include mat-core($custom-typography);
+@include mat-core();
 
 $decredUIApp-theme: mat-light-theme((
   color: (

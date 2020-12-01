@@ -1,7 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { blockService } from 'src/app/services/block.service';
 import { NoticesService } from 'src/app/services/notices.service';
 import { ObjNotice } from 'src/app/shared/interfaces/notices.interface';
 
@@ -42,7 +41,7 @@ export class ResultsSearchListComponent implements OnInit {
           obj.title       = x.title;
           obj.url         = x.url;
           obj.description = x.description;
-          obj.publishedAt = this.objDatePipe.transform(x.publishedAt, 'yyyy/mm/dd');
+          obj.publishedAt = this.objDatePipe.transform(x.publishedAt, 'dd/mm/yyyy');
 
           return obj;
       });

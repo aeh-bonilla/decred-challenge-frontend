@@ -10,7 +10,10 @@ import { ObjCripto } from '../../interfaces/cripto.interface';
 })
 export class HeaderComponent implements OnInit {
 
-  objCrypto: Array<ObjCripto> =[]; 
+  objCrypto: Array<ObjCripto> =[];
+
+  pickerDate = '';
+  pickerDate2 = '';
  
   constructor(private router : Router, private objmarketCap : marketCapService) { }
 

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { JsonService } from './services/json.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,10 +8,6 @@ import { JsonService } from './services/json.service';
 export class AppComponent {
   title = 'DCR MEMORIES';
 
-  constructor(private json : JsonService){}
-  
-  getJson(){
-    this.json.getJson();
-    console.log(this.json);
-  }
+  constructor(){}
+
 }

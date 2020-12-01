@@ -7,19 +7,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { PaginatePipe } from './paginator/paginate.pipe';
+import { FilterPipe } from './filters/filter.pipe';
 
 @NgModule({
     declarations: [
         HeaderComponent,
         FormSearchComponent,
         LineChartComponent,
-        PaginatePipe
+        PaginatePipe,
+        FilterPipe
     ],
     exports: [
         HeaderComponent,
         FormSearchComponent,
         LineChartComponent,
-        PaginatePipe
+        PaginatePipe,
+        FilterPipe
     ],
     imports: [
         MaterialModule,
@@ -31,7 +34,8 @@ import { PaginatePipe } from './paginator/paginate.pipe';
         HeaderComponent,
         FormSearchComponent,
         LineChartComponent,
-        PaginatePipe
+        PaginatePipe,
+        FilterPipe
     ]
   })
   export class ComponentsModule { }
