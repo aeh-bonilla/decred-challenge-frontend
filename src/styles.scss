@@ -36,8 +36,41 @@ $dcrd-color-primary:(
   )
 );
 
+$dcrd-color-secondary:(
+  50:#2ED6A1,
+  100:#2ED6A1,
+  200:#2ED6A1,
+  300: #2ED6A1,
+  400: #2ED6A1,
+  500:#2ED6A1,
+  600:#2ED6A1,
+  700:#2ED6A1,
+  800: #2ED6A1,
+  900: #2ED6A1,
+  A100: #2ED6A1,
+  A200: #2ED6A1,
+  A400: #2ED6A1,
+  A700: #2ED6A1,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
 $decredUIApp-primary: mat-palette($dcrd-color-primary);
-$decredUIApp-accent: mat-palette($mat-pink, A200, A100, A400);
+$decredUIApp-accent: mat-palette($dcrd-color-secondary, A200, A100, A400);
 $decredUIApp-warn: mat-palette($mat-red);
 
 $custom-typography: mat-typography-config(

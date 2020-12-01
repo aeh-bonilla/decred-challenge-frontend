@@ -17,7 +17,8 @@ export class ResultsSearchListComponent implements OnInit {
   page_number: number = 1;
   page_size_options = [5, 10, 25, 50, 100];
 
-
+  dateFrom = new Date(2020,5,1);
+  dateTo = new Date(2020,12,1);
 
   objNotice: Array<ObjNotice> = [];
 
@@ -32,6 +33,11 @@ export class ResultsSearchListComponent implements OnInit {
     this.page_number = e.pageIndex + 1;
   }
 
+  filterArticles(dateFrom : Date, dateTo : Date){
+    this.dateFrom = dateFrom;
+    this.dateTo = dateTo;
+  }
+
   getNotices(){
     this.noticeSvc.getAllNotice().subscribe( (objResponse : any)=>{
       let arrResponse: Array<any> = objResponse.articles;
@@ -41,7 +47,8 @@ export class ResultsSearchListComponent implements OnInit {
           obj.title       = x.title;
           obj.url         = x.url;
           obj.description = x.description;
-          obj.publishedAt = this.objDatePipe.transform(x.publishedAt, 'dd/mm/yyyy');
+          obj.publishedAt  = this.objDatePipe.transform(x.publishedAt, 'dd/MM/YYYY');
+          // obj.publishedAt = new Date(dateArticle);
 
           return obj;
       });

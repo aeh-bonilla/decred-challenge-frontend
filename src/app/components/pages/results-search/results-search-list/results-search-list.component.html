@@ -4,7 +4,7 @@
     <h2>Resultados de busqueda: {{ objNotice.length }}</h2>
     <div class="row">
         <div class="col">
-            <div *ngFor="let article of objNotice | paginate:page_size:page_number">
+            <div *ngFor="let article of objNotice | filterDate:dateFrom:dateTo | paginate:page_size:page_number">
                 <a href="{{ article.url }}" class="list-group-item list-group-item-action" >
                     <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1"><i style="font-size: 14px; color: rgb(10, 175, 153);" class="fa fa-chevron-circle-right"></i> {{ article.title }}</h5>

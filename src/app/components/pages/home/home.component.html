@@ -11,9 +11,9 @@
           <label>Desde: &nbsp;&nbsp;</label>
           <mat-form-field appearance="fill">
               <mat-label>Seleccione una fecha</mat-label>
-              <input matInput [matDatepicker]="picker" >
+              <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker #picker touchUi="true"></mat-datepicker>
             </mat-form-field>
         </div>
       
@@ -21,9 +21,9 @@
             <label>Hasta: &nbsp;&nbsp;</label>
             <mat-form-field appearance="fill">
                 <mat-label>Seleccione una fecha</mat-label>
-                <input matInput [matDatepicker]="picker2">
+                <input matInput [matDatepicker]="picker2" [min]="minDate" [max]="maxDate">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2></mat-datepicker>
+                <mat-datepicker #picker2 touchUi="true"></mat-datepicker>
               </mat-form-field>
         </div>
     <div class="btn-search">

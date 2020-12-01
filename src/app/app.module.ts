@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material-module';
 import { ComponentsModule } from './shared/components/components.module';
 import { CommonModule, DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { CommonModule, DatePipe } from '@angular/common';
     ComponentsModule,
     CommonModule,
     BrowserModule,
+    FormsModule
     
   ],
   exports: [

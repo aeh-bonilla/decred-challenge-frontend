@@ -10,6 +10,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 export class HomeComponent implements OnInit { 
 
+  minDate = new Date(2016,1,8);
+  maxDate = new Date();
+
 
   customOptions: any = {
     loop: true,
