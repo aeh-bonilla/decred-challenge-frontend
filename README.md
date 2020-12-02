@@ -37,17 +37,39 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 
-## Directory Structure
+## Directory Structure Overview
 
-.
-├── src/
-    ├─ app/             #This directory contains all application related codes. This is where you put your code.
-    ├─ assets/          #Default Angular assets folder.
-    ├─ environments/    #Default Angular environments folder.
-    ├─ favicon.png
-    ├─ index.html
-    ├─ main.ts
-    ├─ polyfills.ts
-    ├─ styles.scss
-    └─ test.ts
-    
+```none
+./DecredMemoriesApp                 The memories of Decred.
+├── node_modules/                   Dependencies are installed in this directory.
+├── src/                     
+|   ├── app/                        This directory contains all application related codes.      
+│   │   ├── components/pages/       Directory of web application pages (2).
+│   │   │   ├── home/               Homepage.    
+│   │   │   └── result-search/      Search page.
+│   │   │
+│   │   ├── material/               This directory contains imports of material components.           
+│   │   ├── services/               Here the api is consumed.
+│   │   ├── shared/                 This directory contains shared resources.
+│   │   │   ├── components/         Shared Components.
+│   │   │   │   ├── filters/
+│   │   │   │   ├── form-search/
+│   │   │   │   ├── header/
+│   │   │   │   ├── line-chart/
+│   │   │   │   └── paginator/
+│   │   │   │
+│   │   │   └── interfaces/         Object interfaces.
+│   │   └── ...
+│   │       
+│   ├── assets/                     Default Angular assets folder.        
+│   ├── environments/               Default Angular environments folder.    
+│   ├── favicon.png
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.scss                 This file is for adding/importing global styles to the app.
+│   ├── test.ts             
+│   ├── insight         
+│   └── types           
+└── ...
+```
