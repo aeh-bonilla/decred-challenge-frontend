@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Before you begin developing with Treo, make sure your development environment includes [Node.js](http://www.nodejs.org/), npm and Angular CLI.
+Before you begin developing with DecredMemoriesApp, make sure your development environment includes [Node.js](http://www.nodejs.org/), npm and Angular CLI.
 
 1. Node.js
 To install Node.js, go to Node.js and install the active LTS version.
