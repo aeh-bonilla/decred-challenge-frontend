@@ -99,6 +99,16 @@ $decredUIApp-theme-dark: mat-dark-theme((
 
 @include angular-material-theme($decredUIApp-theme);
 
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('./assets/fonts/SourceCode/SourceCodePro-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('./assets/fonts/SourceSans3/SourceSans3-Regular.otf');
+}
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.

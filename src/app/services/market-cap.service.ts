@@ -10,7 +10,7 @@ export class marketCapService {
 
   constructor(private http : HttpClient) { }
 
-  urlAPI = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=4&CMC_PRO_API_KEY=';
+  urlAPI = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=100&CMC_PRO_API_KEY=';
   urlInfoAPI = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?start=1&limit=4';
 
 

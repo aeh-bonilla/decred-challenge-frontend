@@ -29,7 +29,7 @@ import { FilterPipe } from './filters/filter.pipe';
         ReactiveFormsModule,
         CommonModule,
         ChartsModule,
-        FormsModule
+        FormsModule,
     ],
     providers: [
         HeaderComponent,

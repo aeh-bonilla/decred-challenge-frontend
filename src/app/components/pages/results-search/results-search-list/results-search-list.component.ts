@@ -49,10 +49,9 @@ export class ResultsSearchListComponent implements OnInit {
           obj.description = x.description;
           obj.publishedAt  = this.objDatePipe.transform(x.publishedAt, 'dd/MM/YYYY');
           // obj.publishedAt = new Date(dateArticle);
-
           return obj;
       });
-      console.log(objResponse);
+      // console.log(objResponse);
     });
   }
 }

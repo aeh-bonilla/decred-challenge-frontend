@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css2?family=Source+Code+Pro';
+
 .btn-primary{
   border-color: #007bff00;
   border-radius: 0;
@@ -45,28 +47,26 @@
 }
 
 .red-status-bg{
-  background: #ffff;
+  background:#2ED6A1;
   height: 4%;
   // align-items: center;
   margin-bottom: 25px;
   box-shadow: 0 9px 10px rgba(0, 0, 0, 0.1);
   // place-content: center;
+  overflow: hidden;
+  
   .content-data{
     display: flex;
     margin-top: 1%;
     padding: 0 15px 0 15px;
-    // animation: pasarela 5s infinite;
-    // overflow: hidden;
+    // font-family: 'Source Code Pro' !important;
+    h4{
+      font-family: 'Source Sans Pro' !important;
+    }
+    b{
+      font-family: 'Source Code Pro' !important;
+    }
   }
-}
-
-@keyframes pasarela{
-  0%{ margin-right: 0px; };
-  20%{ margin-right: 20px; };
-  40%{ margin-right: 40px; };
-  60%{ margin-right: 60px; };
-  80%{ margin-right: 80px; };
-  100%{ margin-right: 00px; };
 }
 
 

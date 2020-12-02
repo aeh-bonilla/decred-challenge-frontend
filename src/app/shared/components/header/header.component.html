@@ -42,10 +42,10 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-toolbar-row class="red-status-bg" >
-  <div class="content-data" *ngFor = "let item of objCrypto">
+  <div class="content-data" @enterState *ngFor = "let item of objCrypto">
     <h4>&nbsp;&nbsp;&nbsp;&nbsp; #{{ item.cmc_rank }}</h4>
-    <h4>&nbsp;&nbsp;&nbsp; Moneda: {{ item.name }}</h4>
-    <h4>&nbsp;&nbsp;&nbsp; Simbolo: {{ item.symbol }}</h4>
-    <h4>&nbsp;&nbsp;&nbsp; Precio USD: {{ item.price }}</h4>
+    <h4>&nbsp;&nbsp;&nbsp; {{ item.name }}</h4>
+    <h4>&nbsp;&nbsp;&nbsp; {{ item.symbol }}</h4>
+    <h4>&nbsp;&nbsp;&nbsp; Price:&nbsp;&nbsp;<b>${{ item.price }}</b></h4>
   </div>
 </mat-toolbar-row>
