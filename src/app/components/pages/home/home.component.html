@@ -2,43 +2,47 @@
     <img class="img-logo" src="/assets/img/dcrd_memories_logo_blue.svg" alt="">
 </div>
 
-<!-- <div class="container search-input">
-    <app-form-search></app-form-search>
-</div> -->
-
 <div class="container date">
         <div class="item-date">
           <label>Desde: &nbsp;&nbsp;</label>
           <mat-form-field appearance="fill">
-              <mat-label>Seleccione una fecha</mat-label>
-              <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker touchUi="true"></mat-datepicker>
+              <mat-label>Select a date</mat-label>
+              <input matInput 
+                [matDatepicker]="DateFrom" 
+                [min]="minDate" 
+                [max]="maxDate" 
+                (dateInput)="addDateFrom($event)" required>
+            <mat-datepicker-toggle matSuffix [for]="DateFrom"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #DateFrom></mat-datepicker>
             </mat-form-field>
         </div>
       
         <div class="item-date">
             <label>Hasta: &nbsp;&nbsp;</label>
             <mat-form-field appearance="fill">
-                <mat-label>Seleccione una fecha</mat-label>
-                <input matInput [matDatepicker]="picker2" [min]="minDate" [max]="maxDate">
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2 touchUi="true"></mat-datepicker>
+                <mat-label>Select a date</mat-label>
+              <input matInput 
+                [matDatepicker]="DateTo" 
+                [min]="minDate" 
+                [max]="maxDate" 
+                (dateInput)="addDateTo($event)" required>
+              <mat-datepicker-toggle matSuffix [for]="DateTo"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #DateTo></mat-datepicker>
               </mat-form-field>
         </div>
     <div class="btn-search">
-        <button type="button" class="btn btn-primary" [routerLink]="['/search']" routerLinkActive="router-link-active" >Buscar</button>
+        <button type="button" class="btn btn-primary"  (click)="btnSearch(dateFrom, dateTo)" routerLinkActive="router-link-active" >Buscar</button>
     </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
     <div style="text-align:center">
         <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide>
-                <mat-card class="cards"></mat-card>
+                <mat-card class="cards" (click)="btnSearch(dateFromNewYear, dateToNewYear)"></mat-card>
             </ng-template>  
             <ng-template carouselSlide>
-                <mat-card class="cards"></mat-card>
+                <mat-card class="cards" (click)="btnSearch(dateFromNewYear, dateToNewYear)"></mat-card>
             </ng-template>
             <ng-template carouselSlide>
                 <mat-card class="cards"></mat-card>
@@ -54,5 +58,5 @@
             </ng-template>  
         </owl-carousel-o>
     </div>
-</div>
+</div> -->
 

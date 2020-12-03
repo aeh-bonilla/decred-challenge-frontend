@@ -35,7 +35,7 @@
   </div>
 
   <div class="nav-item">
-    <button type="button" class="btn btn-primary" (click)="btnSearch()">
+    <button type="button" class="btn btn-primary" (click)="btnSearch(dateFrom, dateTo)">
       <i class="fa fa-search"></i>
     </button>
   </div>
@@ -46,6 +46,6 @@
     <h4>&nbsp;&nbsp;&nbsp;&nbsp; #{{ item.cmc_rank }}</h4>
     <h4>&nbsp;&nbsp;&nbsp; {{ item.name }}</h4>
     <h4>&nbsp;&nbsp;&nbsp; {{ item.symbol }}</h4>
-    <h4>&nbsp;&nbsp;&nbsp; Price:&nbsp;&nbsp;<b>${{ item.price }}</b></h4>
+    <h4>&nbsp;&nbsp;&nbsp; Price:&nbsp;&nbsp;<b>${{ item.price }} USD</b></h4>
   </div>
 </mat-toolbar-row>

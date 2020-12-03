@@ -10,6 +10,12 @@
 //     background: lightblue;
 // }
 
+.chart-wrapper{
+    background: #F5F5F5;
+    transform: translateX(-1%);
+    // width: 564px;
+}
+
 .mat-paginator {
     display: flex;
     place-content: center;

@@ -1,7 +1,12 @@
 <app-header></app-header>
 
 <div class="content">
-    <h2>Resultados de busqueda: {{ objNotice.length }}</h2>
+    <div *ngIf="resultToday == true">
+        <h2>Noticias de hoy</h2>
+    </div>
+    <div *ngIf="resultToday == false">
+        <h2>Resultados de busqueda: {{ objNotice.length }}</h2>
+    </div>
     <div class="row">
         <div class="col">
             <div *ngFor="let article of objNotice | paginate:page_size:page_number">
@@ -21,7 +26,20 @@
             </mat-paginator>
         </div>
         <div class="col">
-           <app-line-chart></app-line-chart>
+            <div class="chart-wrapper">
+                <canvas baseChart width="800" height="500"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    [plugins]="lineChartPlugins">
+                </canvas>
+            </div>
+            <div class="chart-wrapper">
+                <app-card-status></app-card-status>
+            </div>
         </div>
     </div>
 </div>

@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class marketCapService {
+export class AgendasService {
 
   constructor(private http : HttpClient) { }
 
-  urlAPI = 'http://18.212.237.160:8080/api/v1/latestprices';
+  urlAPI = 'http://18.212.237.160:8080/api/v1/agenda';
 
 
-  getDataAllCryptos(){
+  getAllAgendas(){
     return this.http.get(`${this.urlAPI}`);
   }
 

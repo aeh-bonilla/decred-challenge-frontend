@@ -1,0 +1,18 @@
+<div class="container-agendas">
+    <div class="title-agendas">
+        <h1>AGENDAS DECRED</h1>
+    </div>
+
+    <div class="col">
+        <div *ngFor="let item of objAgenda">
+            <a class="list-group-item list-group-item-action" >
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><i style="font-size: 14px; color: rgb(5, 18, 77);" class="fa fa-chevron-circle-right"></i> {{item.name}}</h5>
+                <small>{{ item.startTime }} - {{ item.expireTime }}</small>
+                </div>
+                <p class="mb-1">{{item.description}}</p>
+                <small>{{ item.status }}</small>
+            </a>
+        </div>
+    </div>
+</div>

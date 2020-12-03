@@ -1,7 +1,10 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { PriceChartService } from 'src/app/services/price-chart.service';
+import { ObjChartData } from 'src/app/shared/interfaces/chartdata.interface';
+import { Route, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-line-chart',
@@ -10,11 +13,20 @@ import { PriceChartService } from 'src/app/services/price-chart.service';
 })
 export class LineChartComponent implements OnInit {
 
-  public lineChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'PRECIO DCR' },
-    { data: [5, 59, 12, 81, 120, 55, 2], label: 'PRECIO TICKET' },
+  dateFrom: any = null;
+  dateTo: any = null;
+
+  objData: Array<ObjChartData> = [];
+
+  lineChartData: ChartDataSets[] = [
+    { data: [], label: 'Precio de Tickets (DCR)' },
   ];
-  public lineChartLabels: Label[] = ['2000-05-15', '2000-06-15', '2000-07-15', '2000-08-15', '2000-09-15', '2000-10-15', '2000-11-15'];
+  lineChartLabels: Label[] = [];
+
+  dataPrices: Array<any>= [];
+
+  
+  
   
   public lineChartOptions = {
     responsive: true,
@@ -30,16 +42,43 @@ export class LineChartComponent implements OnInit {
   public lineChartType: ChartType = 'line';
   public lineChartPlugins = [];
 
-  constructor( private PriceSvc: PriceChartService){}
+  constructor(  private PriceChartSvc : PriceChartService,
+                private objDatePipe   : DatePipe,
+                private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    // this.getPrices();
+    console.log(this.dateFrom);
+    console.log(this.dateTo);
+    if(this.dateFrom == null && this.dateTo == null){
+      console.log("Entra a if");
+      this.dateFrom = this.objDatePipe.transform(new Date(),'YYYY-MM-dd');
+      this.dateTo = this.objDatePipe.transform(new Date(), 'YYYY-MM-dd')
+      console.log(this.dateFrom);
+      console.log(this.dateTo);
+      this.getDataChart(this.dateFrom, this.dateTo);
+    }
+    // this.getDataChart('2020-11-29', '2020-12-02')
   }
 
-  getPrices():void{
-    this.PriceSvc.getAllPrices().subscribe((objResponse : any) =>{
-      console.log(objResponse);
-    });
-  }
+  getDataChart(dateFrom: any, dateTo: any){
+    this.PriceChartSvc.getAllPricesFromDate(dateFrom, dateTo).subscribe( (objResponse: any) => {
 
+      this.objData = objResponse.map( (x: any) => {
+        var obj = new ObjChartData();
+        obj.dateForPrice      = x.dateForPrice;
+        obj.ticketPrice       = x.ticketPriceInDcr;
+        return obj;
+      });
+      var i = 0;
+      for(const item of this.objData){
+        this.lineChartLabels[i] = item.dateForPrice;
+        this.dataPrices[i] = item.ticketPrice;
+        // console.log(this.dataPrices[i]);
+        i++;
+      }
+      this.lineChartData[0].data = this.dataPrices;
+      console.log(this.lineChartData[0].data);
+      console.log(this.lineChartLabels);
+    })
+  }
 }

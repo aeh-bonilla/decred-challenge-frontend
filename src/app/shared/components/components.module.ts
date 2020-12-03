@@ -8,6 +8,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { PaginatePipe } from './paginator/paginate.pipe';
 import { FilterPipe } from './filters/filter.pipe';
+import { CardStatusComponent } from './card-status/card-status.component';
 
 @NgModule({
     declarations: [
@@ -15,14 +16,16 @@ import { FilterPipe } from './filters/filter.pipe';
         FormSearchComponent,
         LineChartComponent,
         PaginatePipe,
-        FilterPipe
+        FilterPipe,
+        CardStatusComponent
     ],
     exports: [
         HeaderComponent,
         FormSearchComponent,
         LineChartComponent,
         PaginatePipe,
-        FilterPipe
+        FilterPipe,
+        CardStatusComponent
     ],
     imports: [
         MaterialModule,
@@ -36,7 +39,8 @@ import { FilterPipe } from './filters/filter.pipe';
         FormSearchComponent,
         LineChartComponent,
         PaginatePipe,
-        FilterPipe
+        FilterPipe,
+        CardStatusComponent
     ]
   })
   export class ComponentsModule { }

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +9,15 @@ export class NoticesService {
 
   constructor(private http : HttpClient) { }
 
-  urlAPI = 'http://newsapi.org/v2/top-headlines?country=us&';
-
-  keyAPI = 'apiKey=c459b1e0310f475e8d8247cc7922705f';
+  urlAPI = 'http://18.212.237.160:8080/api/v1/news';
 
 
   getAllNotice(){
-    return this.http.get(`${this.urlAPI}${this.keyAPI}`);
+    return this.http.get(`${this.urlAPI}`);
+  }
+
+  getAllNoticeFromDate(dateFrom: string, dateTo: string){
+    return this.http.get(`${this.urlAPI}?startingDate=${dateFrom}&endingDate=${dateTo}`);
   }
 
 }

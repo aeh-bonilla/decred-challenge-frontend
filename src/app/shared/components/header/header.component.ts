@@ -6,6 +6,7 @@ import { ObjCripto } from '../../interfaces/cripto.interface';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { trigger, style, transition, animate, state } from '@angular/animations';
 import { ResultsSearchListComponent } from 'src/app/components/pages/results-search/results-search-list/results-search-list.component'
+import { LineChartComponent } from '../line-chart/line-chart.component';
 
 
 @Component({
@@ -19,11 +20,11 @@ import { ResultsSearchListComponent } from 'src/app/components/pages/results-sea
         opacity: 1
       })),
       state('*', style ({
-        transform: 'translateX(-25000px)',
+        transform: 'translateX(-26000px)',
         opacity: 1
       })),
       transition('void => *', [
-        animate('520s')
+        animate('530s')
       ]),
       transition('* => void', [
         animate('520s')
@@ -35,14 +36,18 @@ export class HeaderComponent implements OnInit {
 
   objCrypto: Array<ObjCripto> =[];
 
-  dateFrom!: Date;
-  dateTo!: Date;
+  dateFrom!: any;
+  dateTo!: any;
   
   minDate = new Date(2016,1,8);
   minDate2 = this.dateFrom;
   maxDate = new Date();
  
-  constructor(private router : Router, private objmarketCap : marketCapService, private objResult : ResultsSearchListComponent) { }
+  constructor(private router        : Router, 
+              private objmarketCap  : marketCapService, 
+              private objResult     : ResultsSearchListComponent,
+              private objChart      : LineChartComponent,
+              private objDatePipe   : DatePipe) { }
 
   ngOnInit(){
     this.getAllCrypto();
@@ -54,19 +59,24 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  btnSearch(){
-    this.objResult.filterArticles(this.dateFrom, this.dateTo);
+  btnSearch(dateFrom: any, dateTo: any){
+    this.router.navigate(['/search',this.dateFrom, this.dateTo]);
+    this.objResult.getNoticesFromDate(this.dateFrom, this.dateTo);
+    this.objChart.getDataChart(this.dateFrom, this.dateTo);
   }
 
   //EVENTS
 
   addDateFrom(event: MatDatepickerInputEvent<Date>) {
-    this.dateFrom = new Date(String(event.value?.toDateString()));
-    // console.log(this.dateFrom)
+    const dateFromEvent = new Date(String(event.value?.toDateString()));
+    this.dateFrom = this.objDatePipe.transform(dateFromEvent, 'YYYY-MM-dd')
+    console.log(this.dateFrom)
   }
 
   addDateTo(event: MatDatepickerInputEvent<Date>) {
-    this.dateTo = new Date(String(event.value?.toDateString()));
+    const dateFromEvent = new Date(String(event.value?.toDateString()));
+    this.dateTo = this.objDatePipe.transform(dateFromEvent, 'YYYY-MM-dd')
+    console.log(this.dateTo)
   }
 
   //METODS
@@ -75,9 +85,6 @@ export class HeaderComponent implements OnInit {
     this.objmarketCap.getDataAllCryptos()
     .subscribe(( objResponse : any) => {
       let arrReponse : Array<any> = objResponse.data;
-
-      console.log(arrReponse);
-      
       this.objCrypto = arrReponse.map(x => {
         var obj = new ObjCripto();
 
