@@ -10,11 +10,11 @@ export class marketCapService {
 
   constructor(private http : HttpClient) { }
 
-  urlAPI = 'http://18.212.237.160:8080/api/v1/latestprices';
+  urlAPI = '/latestprices';
 
 
   getDataAllCryptos(){
-    return this.http.get(`${this.urlAPI}`);
+    return this.http.get(`${environment.baseURLAPI}${this.urlAPI}`);
   }
 
 }

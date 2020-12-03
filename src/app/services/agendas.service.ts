@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,11 @@ export class AgendasService {
 
   constructor(private http : HttpClient) { }
 
-  urlAPI = 'http://18.212.237.160:8080/api/v1/agenda';
+  urlAPI = '/agenda';
 
 
   getAllAgendas(){
-    return this.http.get(`${this.urlAPI}`);
+    return this.http.get(`${environment.baseURLAPI}${this.urlAPI}`);
   }
 
 }
